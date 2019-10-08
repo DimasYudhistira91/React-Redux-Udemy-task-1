@@ -1,25 +1,24 @@
 import React from 'react';
-import faker from 'faker'
+import faker from 'faker';
 
-const Comments = () => {
+const Comments = (props) => {
+  const { author, date, text } = props;
   return (
-    <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={faker.image.avatar()} alt="avatar"/>
+    <div className="comment">
+      <a href="/" className="avatar">
+        <img src={faker.image.avatar()} alt="avatar" />
+      </a>
+      <div className="content">
+        <a href="/" className="author">
+          {author}
         </a>
-        <div className="content">
-          <a href="/" className="author">
-            Dimas
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 8.00pm</span>
-          </div>
-          <div className="text">Nice Post!</div>
+        <div className="metadata">
+          <span className="date">{date}</span>
         </div>
+        <div className="text">{text}</div>
       </div>
     </div>
   );
-}
- 
+};
+
 export default Comments;
